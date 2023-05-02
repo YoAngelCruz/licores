@@ -20,4 +20,5 @@ class LicorDataService {
   }
 }
 
-export default new LicorDataService();
+const licorDataServiceInstance = new LicorDataService();
+export default licorDataServiceInstance;
