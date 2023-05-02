@@ -1,0 +1,66 @@
+.comment-section {
+    width: 100%;
+    float: left;
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-height: 500px; /* ajusta el valor según tus necesidades */
+    overflow: auto;
+  }
+  
+  .comments-section {
+    max-height: 200px; /* establecer la altura máxima */
+    overflow-y: auto; /* permitir el desplazamiento hacia abajo */
+  }
+  
+  .comments-section h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .comment-form {
+    margin-top: 10px;
+  }
+  
+  .comment-form textarea {
+    width: calc(100% - 22px); /* 22px es la suma de los paddings (10px) + los bordes (1px x 2) */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  
+  .comment-form button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .comments-list {
+    margin-top: 10px;
+  }
+  
+  .comment {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .comment h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .comment p {
+    font-size: 16px;
+    margin-bottom: 0;
+  }

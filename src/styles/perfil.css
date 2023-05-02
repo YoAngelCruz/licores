@@ -1,0 +1,42 @@
+.profile {
+
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: unset;
+    color: rgb(201, 97, 53);
+    background-color: rgba(0, 0, 0, 0.792);;
+  }
+  
+  .img-uv {
+    float: left;
+    border-radius: 5%;
+    width: 200px;
+    height: 250px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+  }
+  
+  h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ec6868;
+  }
+  .datos{
+  margin-top: 50px;
+  }
+  .contacto{
+  margin-top: 100px;
+  }

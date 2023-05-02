@@ -1,0 +1,51 @@
+.contenedorListVistas {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.792);
+}
+
+.minVista {
+  flex: 1 0 25%;
+  padding: 10px;
+}
+
+.vista {
+  align-items: center;
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  width: 40%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+
+.title {
+  margin-top: 10px; /* ajusta el valor de acuerdo a tus necesidades */
+  font-size: 18px; /* ajusta el valor de acuerdo a tus necesidades */
+  font-weight: bold;
+  color: white;
+  border-color: black;
+  border-width: 5px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
