@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import LicorDataService from "../services/licores.service";
 import "firebase/storage"
+import CommentsComponent from "./comentarios";
+import "../styles/licor.css";
+
+
 export default class Licor extends Component {
     constructor(props) {
         console.log(props);
@@ -17,6 +21,7 @@ export default class Licor extends Component {
                 id: null,
                 title: "",
                 description: "",
+                image: "",
                 published: false,
             },
             message: "",
@@ -66,6 +71,17 @@ export default class Licor extends Component {
         }));
     }
 
+    onChangeURL(e) {
+        const url = e.target.value;
+    
+        this.setState((prevState) => ({
+          currentLicor: {
+            ...prevState.currentLicor,
+            url: url,
+          }
+        }))
+      }
+
     updatePublished(status) {
         LicorDataService.update(this.state.currentLicor.id, {
             published: status,
@@ -112,20 +128,17 @@ export default class Licor extends Component {
     }
 
 
-
-
-
     render() {
         const { currentLicor } = this.state;
 
         return (
-            <div>
-                <h4>Licor</h4>
+            <div className="padre">
+                <h4>Licoressss</h4>
                 {currentLicor ? (
                     <div className="edit-form">
                         <form>
                             <div className="form-group">
-                                <label htmlFor="title">Title</label>
+                                <label htmlFor="title">Titulo de la imagen</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -144,8 +157,12 @@ export default class Licor extends Component {
                                     onChange={this.onChangeDescription}
                                 />
                             </div>
+                            <div className="container-image">
+                                <label htmlFor="url"> Imagen: </label>
+                                <img src= {currentLicor.url} alt="hola" ></img>
+                            </div>
 
-                            <div className="form-group">
+                            <div className="status">
                                 <label>
                                     <strong>Status:</strong>
                                 </label>
@@ -155,14 +172,14 @@ export default class Licor extends Component {
 
                         {currentLicor.published ? (
                             <button
-                                className="badge badge-primary mr-2"
+                                className="button"
                                 onClick={() => this.updatePublished(false)}
                             >
                                 UnPublish
                             </button>
                         ) : (
                             <button
-                                className="badge badge-primary mr-2"
+                                className="button"
                                 onClick={() => this.updatePublished(true)}
                             >
                                 Publish
@@ -170,7 +187,7 @@ export default class Licor extends Component {
                         )}
 
                         <button
-                            className="badge badge-danger mr-2"
+                            className="button"
                             onClick={this.deleteLicor}
                         >
                             Delete
@@ -184,11 +201,12 @@ export default class Licor extends Component {
                             Update
                         </button>
                         <p>{this.state.message}</p>
+                          <CommentsComponent/>
                     </div>
                 ) : (
                     <div>
                         <br />
-                        <p>Please click on a Licorrr...</p>
+                        <p>Please click on a Licor...</p>
                     </div>
                 )}
             </div>
