@@ -1,0 +1,29 @@
+.padre{
+    float: right;
+    max-width: 40%;
+    max-height: 50px;
+
+}
+.container-image img {
+    width: 300px;
+    height: 300px;
+}
+
+.padre h4{
+    color: rgb(253, 253, 253);
+    text-shadow:  rgb(210, 96, 35);
+}
+.padre label{
+    color: rgb(253, 253, 253);
+}
+.status {
+    color: rgb(253, 253, 253);
+}
+.padre button{
+    color: #d1d9da;
+    margin: 1px;
+    font-size: 10px;
+    background-color: rgb(175, 95, 55);
+    padding: 4px 15px ;
+    border-radius: 15px;
+}
