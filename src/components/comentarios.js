@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/comentarios.css"
-import LikeButton from "./Like";
+import ReactionsComponent from "./reacciones";
 
 function CommentsComponent() {
   return (
@@ -28,7 +28,7 @@ function CommentsComponent() {
           <p>This is another comment.</p>
         </div>
         <div class="like">
-          <LikeButton/>
+          <ReactionsComponent/>
         </div>
       </div>
     </div>
