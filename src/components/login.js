@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { auth, provider } from "../firebase";
-import { signInWithPopup } from "firebase/auth";
+import { signInWithRedirect } from "firebase/auth";
 import AddLicor from "./add-licor.component";
 import "../styles/login.css";
 
@@ -8,7 +8,7 @@ function Login() {
 
     const [value, setValue] = useState("")
     const handelClick = () => {
-        signInWithPopup(auth, provider).then((data) => {
+        signInWithRedirect(auth, provider).then((data) => {
             setValue(data.user.displayName)
             localStorage.setItem("user", data.user.displayName)
             window.location.reload();
