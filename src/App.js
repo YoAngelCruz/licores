@@ -3,7 +3,6 @@ import { Route, Link, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/App.css";
 
-import AddLicor from "./components/add-licor.component";
 import LicoresList from "./components/licores-list.component";
 import Perfil from "./components/perfil";
 import Login from "./components/login";

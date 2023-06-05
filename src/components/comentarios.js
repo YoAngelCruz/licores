@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/comentarios.css";
 import KafkaService from "../services/kafka.service";
 import axios from 'axios';
-
+// eslint-disable-next-line
 const CommentsComponent = ({ id }) => {
   const [comentarios, setComentarios] = useState([]);
   const [commentText, setCommentText] = useState([]);
@@ -11,8 +11,9 @@ const CommentsComponent = ({ id }) => {
 
   useEffect(() => {
     fetchComments();
+    // eslint-disable-next-line
   }, []);
-
+  // eslint-disable-next-line
   const fetchComments = async (r) => {
     try {
       const response = await axios.get(`${uri}/${id}`);
