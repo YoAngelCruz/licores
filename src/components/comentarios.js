@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/clip.css";
+import "../styles/comentarios.css";
 import KafkaService from "../services/kafka.service";
 import axios from 'axios';
 

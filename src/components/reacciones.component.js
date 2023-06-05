@@ -7,7 +7,7 @@ const ReactionsComponent = ({ id }) => {
   const [likeCount, setLikeCount] = useState(0);
   const [loveCount, setLoveCount] = useState(0);
   const [HahaCount, setHahaCount] = useState(0);
-  const [AngryCount, setAngryCount] = useState(0);
+  const [AngryCount, setAngryCount] = useState(0);  
   const [SadCount, setSadCount] = useState(0);
   const [WowCount, setWowCount] = useState(0);
   const uri = "https://api-mongo-coments-and-reactions-service-kafka-yoangelcruz.cloud.okteto.net/api/reactions"
@@ -63,6 +63,7 @@ const ReactionsComponent = ({ id }) => {
         e.preventDefault();
         reaction(e, "like");
       }}
+      onMouseOver={fetchReactions}
       >
         <tool-tip>{likeCount}</tool-tip>
       </div>
@@ -70,35 +71,45 @@ const ReactionsComponent = ({ id }) => {
       <div className="reaction reaction-love" onClick={(e) => {
         e.preventDefault();
         reaction(e, "love");
-      }}>
+      }}
+      onMouseOver={fetchReactions}
+      >
         <tool-tip>{loveCount}</tool-tip>
       </div>
 
       <div className="reaction reaction-haha" onClick={(e) => {
         e.preventDefault();
         reaction(e, "haha");
-      }}>
+      }}
+      onMouseOver={fetchReactions}
+      >
         <tool-tip>{HahaCount}</tool-tip>
       </div>
 
       <div className="reaction reaction-wow" onClick={(e) => {
         e.preventDefault();
         reaction(e, "wow");
-      }}>
+      }}
+      onMouseOver={fetchReactions}
+      >
         <tool-tip>{WowCount}</tool-tip>
       </div>
 
       <div className="reaction reaction-sad" onClick={(e) => {
         e.preventDefault();
         reaction(e, "sad");
-      }}>
+      }}
+      onMouseOver={fetchReactions}
+      >
         <tool-tip>{SadCount}</tool-tip>
       </div>
 
       <div className="reaction reaction-angry" onClick={(e) => {
         e.preventDefault();
         reaction(e, "angry");
-      }}>
+      }}
+      onMouseOver={fetchReactions}
+      >
         <tool-tip>{AngryCount}</tool-tip>
       </div>
 
