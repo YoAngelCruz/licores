@@ -3,6 +3,7 @@ import LicorDataService from "../services/licores.service";
 import "firebase/storage"
 import CommentsComponent from "./comentarios";
 import "../styles/licor.css";
+import ReactionsComponent from "./reacciones.component";
 
 
 export default class Licor extends Component {
@@ -160,6 +161,10 @@ export default class Licor extends Component {
                             <div className="container-image">
                                 <label htmlFor="url"> Imagen: </label>
                                 <img src= {currentLicor.url} alt="hola" ></img>
+                            </div>
+                            <div >
+                                 <ReactionsComponent
+                                id={currentLicor.id}/>
                             </div>
 
                             <div className="status">

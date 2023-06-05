@@ -6,13 +6,18 @@ import "./styles/App.css";
 import AddLicor from "./components/add-licor.component";
 import LicoresList from "./components/licores-list.component";
 import Perfil from "./components/perfil";
+import Login from "./components/login";
 
 class App extends Component {
   render() {
+    const user = localStorage.getItem("user");
+    function logout () {
+      localStorage.clear();
+      window.location.reload();
+    }
     return (
       <div>
         <nav className="header">
-          
           <div className="cinta">
             <li className="nav-item">
             <Link to={"/perfil"} className="link">
@@ -27,6 +32,14 @@ class App extends Component {
                 Add
               </Link>
             </li>
+            <li className="nav-item">
+              {
+                user &&
+                <Link onClick={logout} className="link">
+                Cierrar Sesion
+              </Link>
+              }
+            </li>
           </div>
         </nav>
 
@@ -34,7 +47,7 @@ class App extends Component {
           <Routes>
             <Route path='/perfil' element={<Perfil/>}/>
             <Route exact path="/licores" element={<LicoresList/>} />
-            <Route exact path="add" element={<AddLicor/>} />
+            <Route exact path="add" element={<Login/>} />
           </Routes>
         </div>
       </div>
