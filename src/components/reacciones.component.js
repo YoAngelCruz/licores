@@ -2,7 +2,7 @@ import '../styles/reactions.css'
 import KafkaService from "../services/kafka.service";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+// eslint-disable-next-line
 const ReactionsComponent = ({ id }) => {
   const [likeCount, setLikeCount] = useState(0);
   const [loveCount, setLoveCount] = useState(0);
@@ -14,8 +14,9 @@ const ReactionsComponent = ({ id }) => {
 
   useEffect(() => {
     fetchReactions();
+      // eslint-disable-next-line
   }, []);
-
+  // eslint-disable-next-line
   const fetchReactions = async (r) => {
     try {
       const responseLike = await axios.get(`${uri}/${id}/like`);
