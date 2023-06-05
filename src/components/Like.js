@@ -1,20 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "../styles/Like.css"
+import KafkaService from "../services/kafka.service";
+
+function saveLike(e, status) {
+
+    let data = {
+        id: 0,
+        status: status
+    };
+
+    console.log(JSON.stringify(data));
+
+    KafkaService.reaction("love-reaction");
+    e.preventDefault();
+}
 
 function LikeButton() {
-    const [likes, setLikes] = useState(0);
-    const [liked, setLiked] = useState(false);
     return (
         <div className="like-button-container">
-            <button
-                className={`like-button ${liked ? 'liked' : ''}`}
-                onClick={() => {
-                    setLikes(likes + 1);
-                    setLiked(true);
-                }}
-            >
-                {likes} Likes
+            <button onClick={(e) => {
+                e.preventDefault();
+                saveLike(e, 1)
+
+            }
+            } >
+                Love
             </button>
+
         </div>
     );
 }
