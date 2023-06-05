@@ -1,24 +1,40 @@
 class KafkaService {
-    //url = 'https://your-kafka-express-service-kafka-adsoftsito.cloud.okteto.net/';
-    url = 'https://node-producer-service-yoangelcruz.cloud.okteto.net/';
-   
-    reaction = async (name) => {
-     await fetch(this.url + 'like?name=' + name, {
-        method: 'GET',
-        headers: {
-           'Content-type': 'application/json; charset=UTF-8',
-        },  
-     })  
-        .then((response) => console.log(response.json()))
-        .then((data) => {
-          console.log(data);
-        })  
-        .catch((err) => {
-           console.log(err.message);
-        }); 
-    }
-  
-  }
+   url = 'https://node-producer-reaction-service-kafka-yoangelcruz.cloud.okteto.net/';
+   url2 = 'https://node-producer-coments-service-kafka-yoangelcruz.cloud.okteto.net/'
 
-  export default new KafkaService();
-  
+   reactionPush = async (data) => {
+       await fetch(this.url + 'reaction?userId=' + data.userId + '&objectId=' + data.objectId + '&reactionId=' + data.reactionId  , {
+           method: 'GET',
+           headers: {
+               'Content-type': 'application/json; charset=UTF-8',
+           },
+       })
+           .then((response) => console.log(response.json()))
+           .then((data) => {
+               console.log(data);
+           })
+           .catch((err) => {
+               console.log(err.message);
+           });
+   }
+
+   commentPush = async (data) => {
+       await fetch(this.url2 + 'comments?userId=' + data.userId + '&objectId=' + data.objectId + '&comment=' + data.comment  , {
+           method: 'GET',
+           headers: {
+               'Content-type': 'application/json; charset=UTF-8',
+           },
+       })
+           .then((response) => console.log(response.json()))
+           .then((data) => {
+               console.log(data);
+           })
+           .catch((err) => {
+               console.log(err.message);
+           });
+   }
+
+}
+
+const KafkaServiceInstance = new KafkaService();
+export default KafkaServiceInstance;
